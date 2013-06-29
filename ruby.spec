@@ -75,7 +75,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}
 
 %changelog
-* Friday Jun 28 2013 Nathan Milford <nathan@milford.io> - 2.0.0-p247
+* Fri Jun 28 2013 Nathan Milford <nathan@milford.io> - 2.0.0-p247
 - Bumped 2.0.0-p247.
 * Sun Feb 24 2013 Nathan Milford <nathan@milford.io> - 2.0.0-p0
 - Initial 2.0.0-p0 for realz.
