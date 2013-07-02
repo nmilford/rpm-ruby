@@ -8,7 +8,7 @@
 # wget https://raw.github.com/nmilford/rpm-ruby/master/ruby.spec -O ~/rpmbuild/SPECS/ruby.spec
 # wget ftp://ftp.ruby-lang.org/pub/ruby/2.0/ruby-2.0.0-p247.tar.gz -O ~/rpmbuild/SOURCES/ruby-2.0.0-p247.tar.gz
 #
-# rpmbuild -bb ~/rpmbuild/SPECS/ruby.spec
+# QA_RPATHS=$[ 0x0001|0x0010 ]rpmbuild -bb ~/rpmbuild/SPECS/ruby.spec
 
 %define rubyver         2.0.0
 %define rubyminorver    p247
