@@ -6,12 +6,12 @@
 # sudo yum -y install readline libyaml libyaml-devel readline-devel ncurses ncurses-devel gdbm gdbm-devel glibc-devel tcl-devel gcc unzip openssl-devel db4-devel byacc make libffi-devel
 #
 # wget https://raw.github.com/nmilford/rpm-ruby/master/ruby.spec -O ~/rpmbuild/SPECS/ruby.spec
-# wget ftp://ftp.ruby-lang.org/pub/ruby/2.0/ruby-2.0.0-p247.tar.gz -O ~/rpmbuild/SOURCES/ruby-2.0.0-p247.tar.gz
+# wget ftp://ftp.ruby-lang.org/pub/ruby/2.0/ruby-2.0.0-p353.tar.gz -O ~/rpmbuild/SOURCES/ruby-2.0.0-p353.tar.gz
 #
 # QA_RPATHS=$[ 0x0001|0x0010 ]rpmbuild -bb ~/rpmbuild/SPECS/ruby.spec
 
 %define rubyver         2.0.0
-%define rubyminorver    p247
+%define rubyminorver    p353
 
 Name:           ruby
 Version:        %{rubyver}_%{rubyminorver}
@@ -75,6 +75,8 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}
 
 %changelog
+* Wed Dec 18 2013 Nathan Milford <nathan@milford.io> - 2.0.0-p353
+- Bumped 2.0.0-p353.
 * Fri Jun 28 2013 Nathan Milford <nathan@milford.io> - 2.0.0-p247
 - Bumped 2.0.0-p247.
 * Sun Feb 24 2013 Nathan Milford <nathan@milford.io> - 2.0.0-p0
