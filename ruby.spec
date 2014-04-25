@@ -6,11 +6,11 @@
 # sudo yum -y install readline libyaml libyaml-devel readline-devel ncurses ncurses-devel gdbm gdbm-devel glibc-devel tcl-devel gcc unzip openssl-devel db4-devel byacc make libffi-devel
 #
 # wget https://raw.github.com/nmilford/rpm-ruby/master/ruby.spec -O ~/rpmbuild/SPECS/ruby.spec
-# wget ftp://ftp.ruby-lang.org/pub/ruby/2.1/ruby-2.1.0.tar.gz -O ~/rpmbuild/SOURCES/ruby-2.1.0.tar.gz
+# wget http://cache.ruby-lang.org/pub/ruby/2.1/ruby-%{rubyver}.tar.gz -O ~/rpmbuild/SOURCES/ruby-2.1.1.tar.gz
 #
 # QA_RPATHS=$[ 0x0001|0x0010 ] rpmbuild -bb ~/rpmbuild/SPECS/ruby.spec
 
-%define rubyver         2.1.0
+%define rubyver         2.1.1
 #%define rubyminorver    p353
 
 Name:           ruby
@@ -23,7 +23,7 @@ BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 BuildRequires:  readline libyaml libyaml-devel readline-devel ncurses ncurses-devel gdbm gdbm-devel glibc-devel tcl-devel gcc unzip openssl-devel db4-devel byacc make libffi-devel
 Requires:       libyaml
 #Source0:        ftp://ftp.ruby-lang.org/pub/ruby/ruby-%{rubyver}-%{rubyminorver}.tar.gz
-Source0:        ftp://ftp.ruby-lang.org/pub/ruby/ruby-%{rubyver}.tar.gz
+Source0:        http://cache.ruby-lang.org/pub/ruby/2.1/ruby-%{rubyver}.tar.gz
 Summary:        An interpreter of object-oriented scripting language
 Group:          Development/Languages
 Provides: ruby(abi) = 2.1
@@ -78,6 +78,8 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}
 
 %changelog
+* Fri Apr 25 2014 Spike Grobstein <sgrobstein@shutterstock.com> - 2.1.1
+- Bumps 2.1.1
 * Wed Dec 25 2013 Nathan Milford <nathan@milford.io> - 2.1.0
 - Bumped 2.1.0
 * Wed Dec 18 2013 Nathan Milford <nathan@milford.io> - 2.0.0-p353
